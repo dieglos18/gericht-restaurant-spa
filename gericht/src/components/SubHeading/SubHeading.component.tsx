@@ -1,4 +1,5 @@
 import { images } from "../../constants";
+import { p__cormorant } from "../../constants/styles";
 
 interface SubHeadingProps {
   title: string;
@@ -6,10 +7,10 @@ interface SubHeadingProps {
 
 const SubHeading = ({ title }: SubHeadingProps) => (
   <div style={{ marginBottom: "1rem" }}>
-    <p className="font-base text-white tracking-[0.06em] capitalize leading-[29.9px] text-[23px] [font-feature-settings:'tnum_on','lnum_on']" style={{fontWeight: 500}}>
+    <p className={p__cormorant} style={{fontWeight: 500}}>
       {title}
     </p>
-    <img src={images.spoon} alt="spoon" className="w-[45px]" />
+    <img src={images.spoon} alt="spoon" className="w-[45px] w-[1150px]:w-[80px]" />
   </div>
 );
 
