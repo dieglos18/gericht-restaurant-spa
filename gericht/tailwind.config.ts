@@ -1,22 +1,9 @@
-export default {
-   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        base: ['"Cormorant Upright"', "serif"],
-        alt: ['"Open Sans"', "sans-serif"],
-      },
-      colors: {
-        golden: "#DCCA87",
-        dark: "#0C0C0C",
-        gray: "#545454",
-        crimson: "#F5EFDB",
-        grey: "#AAAAAA",
-        light: "#FFFFFF",
-      },
       keyframes: {
         "slide-bottom": {
           "0%": {
@@ -35,3 +22,5 @@ export default {
   },
   plugins: [],
 };
+
+export default config;
