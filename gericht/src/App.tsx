@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar/Navbar.component"
 import AboutUs from "./container/AboutUs/AboutUs.container"
 import Header from "./container/Header/Header.container"
+import SpecialMenu from "./container/Menu/SpecialMenu.container"
 function App() {
 
   return (
@@ -8,6 +9,7 @@ function App() {
      <Navbar />
      <Header />
      <AboutUs />
+     <SpecialMenu />
     </>
   )
 }
