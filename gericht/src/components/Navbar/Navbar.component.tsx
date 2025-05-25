@@ -7,7 +7,7 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = React.useState(false);
 
   return (
-    <nav className="w-full flex items-center justify-between bg-black py-4 px-6 sm:px-8">
+    <nav className="w-full flex items-center justify-between bg-background py-4 px-6 sm:px-8">
 
       <div className="flex items-center justify-start">
         <img
@@ -53,17 +53,17 @@ const Navbar = () => {
         />
 
         {toggleMenu && (
-          <div className="fixed top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center z-50 transition-all duration-500 ease-in-out">
+          <div className="fixed top-0 left-0 w-full h-screen bg-background flex flex-col items-center justify-center z-50 transition-all duration-500 ease-in-out">
             <MdOutlineRestaurantMenu
               fontSize={27}
-              className="absolute top-5 right-5 text-[#DCCA87] cursor-pointer"
+              className="absolute top-5 right-5 text-golden cursor-pointer"
               onClick={() => setToggleMenu(false)}
             />
             <ul className="list-none text-center">
               {["Home", "About", "Menu", "Awards", "Contact"].map((item) => (
                 <li
                   key={item}
-                  className="m-8 text-[#DCCA87] text-3xl font-alt cursor-pointer hover:text-white transition-all"
+                  className="m-8 text-golden text-3xl font-alt cursor-pointer hover:text-white transition-all"
                 >
                   <a href={`#${item.toLowerCase()}`}>{item}</a>
                 </li>
