@@ -17,9 +17,7 @@ const Header = () => (
       </h1>
 
       <p
-        className="mx-4 text-white font-alt text-[16px] capitalize transition-all hover:text-gray-300 
-      tracking-[0.04em] leading-[28px] font-normal 
-      2xl:text-[30px] 2xl:leading-[50px]"
+        className="mx-4 text-white font-alt text-[16px] capitalize tracking-[0.04em] leading-[28px] font-normal 2xl:text-[30px] 2xl:leading-[50px]"
         style={{ margin: "2rem 0" }}
       >
         Sit tellus lobortis sed senectus vivamus molestie. Condimentum volutpat
