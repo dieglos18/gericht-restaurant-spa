@@ -39,7 +39,7 @@ const SpecialMenu = () => (
         <img
           src={images.menu}
           alt="menu img"
-          className="flex w-full h-auto 2xl:h-[920px]"
+          className="flex w-full h-auto xl:h-[620px]"
         />
       </div>
 
