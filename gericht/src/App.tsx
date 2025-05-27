@@ -1,21 +1,23 @@
-import Navbar from "./components/Navbar/Navbar.component"
-import AboutUs from "./container/AboutUs/AboutUs.container"
-import Chef from "./container/Chef/Chef"
-import Header from "./container/Header/Header.container"
-import Intro from "./container/IntroVideo/IntroVideo.container"
-import SpecialMenu from "./container/Menu/SpecialMenu.container"
-function App() {
+import Navbar from "./components/Navbar/Navbar.component";
+import AboutUs from "./container/AboutUs/AboutUs.container";
+import Chef from "./container/Chef/Chef";
+import Header from "./container/Header/Header.container";
+import Intro from "./container/IntroVideo/IntroVideo.container";
+import Laurels from "./container/Laurels/Laurels.container";
+import SpecialMenu from "./container/Menu/SpecialMenu.container";
 
+function App() {
   return (
     <>
-     <Navbar />
-     <Header />
-     <AboutUs />
-     <SpecialMenu />
-     <Chef />
-     <Intro />
+      <Navbar />
+      <Header />
+      <AboutUs />
+      <SpecialMenu />
+      <Chef />
+      <Intro />
+      <Laurels />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
