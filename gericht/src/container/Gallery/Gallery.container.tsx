@@ -52,7 +52,7 @@ const Gallery: React.FC = () => {
               <img
                 src={image}
                 alt="gallery"
-                className="w-full h-full object-cover rounded-md transition-opacity duration-300 group-hover:opacity-75"
+                className="w-full h-full object-cover rounded-md transition-opacity duration-300 group-hover:opacity-45"
               />
               <BsInstagram className="absolute inset-0 m-auto text-gray-400 text-3xl cursor-pointer transition-colors duration-300 group-hover:text-white" />
             </div>
