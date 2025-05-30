@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BsInstagram,
   BsArrowLeftShort,
@@ -16,15 +16,45 @@ const galleryImages = [
 
 const Gallery: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+
+  const updateScrollButtons = () => {
+    if (!scrollRef.current) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+  };
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      scrollRef.current.scrollLeft += direction === "left" ? -300 : 300;
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -300 : 300,
+        behavior: "smooth",
+      });
+      setTimeout(updateScrollButtons, 300);
     }
   };
 
+  useEffect(() => {
+    updateScrollButtons();
+
+    const scrollElement = scrollRef.current;
+    if (scrollElement) {
+      scrollElement.addEventListener("scroll", updateScrollButtons);
+    }
+
+    return () => {
+      if (scrollElement) {
+        scrollElement.removeEventListener("scroll", updateScrollButtons);
+      }
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col lg:flex-row bg-background py-16 px-4 sm:px-8 lg:pl-2">
+    <div className="flex flex-col items-center justify-center min-h-screen lg:flex-row bg-background py-16 px-4 sm:px-8 lg:pl-2">
       <div className="flex-1 flex flex-col justify-center items-start px-8 min-w-[100%] sm:min-w-[500px]">
         <SubHeading title="Instagram" />
         <h1 className="text-7xl font-base capitalize text-golden mt-4">
@@ -43,11 +73,11 @@ const Gallery: React.FC = () => {
       </div>
 
       <div className="relative flex-1 w-full max-w-full mt-12 lg:mt-0 overflow-hidden ml-auto">
-        <div ref={scrollRef} className="flex overflow-hidden space-x-8">
+        <div ref={scrollRef} className="flex overflow-hidden space-x-8 px-1">
           {galleryImages.map((image, index) => (
             <div
               key={`gallery_image-${index + 1}`}
-              className="group relative min-w-[240px] sm:min-w-[301px] h-[320px] sm:h-[447px]"
+              className="group relative min-w-[240px] sm:min-w-[301px] h-[320px] sm:h-[447px] border border-grey rounded-md"
             >
               <img
                 src={image}
@@ -59,14 +89,19 @@ const Gallery: React.FC = () => {
           ))}
         </div>
 
-        <div className="absolute bottom-5 w-full px-4 flex justify-between items-center">
+        <div className="absolute bottom-5 w-full px-4 flex justify-between items-center z-10">
           <BsArrowLeftShort
-            className="text-golden text-3xl bg-background p-1 rounded hover:text-white cursor-pointer"
-            onClick={() => scroll("left")}
+            className={`text-background text-4xl shadow-md bg-golden p-2 rounded cursor-pointer transition-opacity duration-200 ${
+              canScrollLeft ? "opacity-100" : "opacity-30 cursor-not-allowed"
+            }`}
+            onClick={() => canScrollLeft && scroll("left")}
           />
+
           <BsArrowRightShort
-            className="text-golden text-3xl bg-background p-1 rounded hover:text-white cursor-pointer"
-            onClick={() => scroll("right")}
+            className={`text-background text-4xl shadow-md bg-golden p-2 rounded cursor-pointer transition-opacity duration-200 ${
+              canScrollRight ? "opacity-100" : "opacity-30 cursor-not-allowed"
+            }`}
+            onClick={() => canScrollRight && scroll("right")}
           />
         </div>
       </div>

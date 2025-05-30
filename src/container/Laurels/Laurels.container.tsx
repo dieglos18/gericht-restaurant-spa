@@ -27,7 +27,7 @@ const AwardCard: React.FC<AwardCardProps> = ({
 const Laurels: React.FC = () => (
   <div
     id="awards"
-    className="relative flex flex-col lg:flex-row justify-center bg-fixed bg-cover bg-center px-6 md:px-20 py-20"
+    className="relative min-h-screen flex flex-col lg:flex-row justify-center bg-fixed bg-cover bg-center px-6 md:px-20 py-20"
     style={{ backgroundImage: `url(${images.bg})` }}
   >
     <div className="flex-1 w-full px-4">
