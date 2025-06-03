@@ -91,15 +91,15 @@ const Gallery: React.FC = () => {
 
         <div className="absolute bottom-5 w-full px-4 flex justify-between items-center z-10">
           <BsArrowLeftShort
-            className={`text-background text-4xl shadow-md bg-golden p-2 rounded cursor-pointer transition-opacity duration-200 ${
-              canScrollLeft ? "opacity-100" : "opacity-30 cursor-not-allowed"
+            className={`text-background text-4xl shadow-md bg-golden p-2 rounded transition-opacity duration-200 ${
+              canScrollLeft ? "opacity-100 cursor-pointer" : "opacity-30 cursor-default"
             }`}
             onClick={() => canScrollLeft && scroll("left")}
           />
 
           <BsArrowRightShort
-            className={`text-background text-4xl shadow-md bg-golden p-2 rounded cursor-pointer transition-opacity duration-200 ${
-              canScrollRight ? "opacity-100" : "opacity-30 cursor-not-allowed"
+            className={`text-background text-4xl shadow-md bg-golden p-2 rounded transition-opacity duration-200 ${
+              canScrollRight ? "opacity-100 cursor-pointer" : "opacity-30 cursor-default"
             }`}
             onClick={() => canScrollRight && scroll("right")}
           />
