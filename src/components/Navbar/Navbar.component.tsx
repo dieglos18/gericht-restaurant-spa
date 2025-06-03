@@ -18,7 +18,7 @@ const Navbar = () => {
       </div>
 
       <ul className="flex-1 hidden max-[1150px]:hidden md:flex items-center justify-center list-none">
-        {["Home", "About", "Menu", "Awards", "Contact"].map((item) => (
+        {["Home", "About", "Menu", "Chef", "Awards", "Location"].map((item) => (
           <li
             key={item}
             className="mx-4 text-white font-alt text-[16px] capitalize cursor-pointer hover:text-gray-300 transition-all"
@@ -29,19 +29,17 @@ const Navbar = () => {
       </ul>
 
       <div className="hidden max-[650px]:hidden md:flex items-center justify-end">
-        <a
-          href="#login"
-          className="mx-4 text-white font-alt text-[16px] capitalize no-underline transition-all duration-75 ease-in-out hover:border-b hover:border-golden"
+        <p
+          className="mx-4 text-white font-alt text-[16px] capitalize cursor-default no-underline transition-all duration-75 ease-in-out hover:border-b hover:border-golden"
         >
           Log In / Register
-        </a>
+        </p>
         <div className="w-[1px] h-[30px] bg-grey" />
-        <a
-          href="/"
-          className="mx-4 text-white font-alt text-[16px] capitalize no-underline transition-all duration-75 ease-in-out hover:border-b hover:border-golden"
+        <p
+          className="mx-4 text-white font-alt text-[16px] capitalize cursor-default no-underline transition-all duration-75 ease-in-out hover:border-b hover:border-golden"
         >
           Book Table
-        </a>
+        </p>
       </div>
 
       <div className="flex md:hidden">

@@ -8,6 +8,7 @@ const FindUs: React.FC = () => {
     <div
       className="min-h-screen flex flex-col lg:flex-row justify-between items-center bg-cover bg-center bg-fixed px-6 py-16 lg:px-24"
       style={{ backgroundImage: `url(${images.bg})` }}
+      id="location"
     >
       <div className="flex-1 w-full flex flex-col justify-start items-start text-left px-16 lg:px-0">
         <SubHeading title="contact" />

@@ -3,7 +3,10 @@ import SubHeading from "../../components/SubHeading/SubHeading.component";
 import { images, data } from "../../constants";
 
 const SpecialMenu = () => (
-  <div className="flex flex-col bg-background justify-center items-center py-16 px-6 sm:px-12 lg:px-24">
+  <div
+    className="flex flex-col bg-background justify-center items-center py-16 px-6 sm:px-12 lg:px-24"
+    id="menu"
+  >
     <div className="mb-8 flex flex-col items-center justify-center">
       <SubHeading title="Menu that fits you palatte" />
       <h1
@@ -66,7 +69,7 @@ const SpecialMenu = () => (
     <div className="mt-4">
       <button
         type="button"
-        className="bg-golden font-base text-background px-8 py-3 rounded-lg font-semibold transition duration-200 hover:opacity-90"
+        className="bg-golden font-base text-background px-8 py-3 rounded-lg font-semibold"
       >
         View More
       </button>

@@ -26,10 +26,7 @@ const Header = () => (
       </p>
 
       <button
-        type="button"
-        className="text-background bg-golden font-base font-bold tracking-[0.04em] leading-7 text-[16px] 
-      px-6 py-2 rounded-md cursor-pointer 
-      2xl:text-[37px] 2xl:leading-[67px]"
+        className="text-background bg-golden font-base font-bold tracking-[0.04em] leading-7 text-[16px] px-6 py-2 rounded-md 2xl:text-[37px] 2xl:leading-[67px]"
       >
         Explore Menu
       </button>
